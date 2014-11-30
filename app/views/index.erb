@@ -1,3 +1,10 @@
 <div class="container">
-<h1>Hello World!</h1>
+<h1><center>Hello World!</center></h1>
+ <% if current_user %>
+    <p>It's nice to see you here again!</p>
+    <a href ='/logout'>LOGOUT</a>
+    <% else %>
+    <p>Hello, world!</p>
+    <p><a href='/signup'>Signup</a> OR <a href='/login'>Login</a> now!</p>
+    <% end %>
 </div>

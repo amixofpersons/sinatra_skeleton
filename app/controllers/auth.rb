@@ -3,11 +3,11 @@ get '/login' do
   erb :'auth/login'
 end
 
-get 'signup' do
+get '/signup' do
   erb :'auth/signup'
 end
 
-get 'logout' do
+get '/logout' do
   session[:user] = nil
   redirect('/')
 end
@@ -26,7 +26,7 @@ post '/signup' do
 end
 
 post '/login' do
-  user = User.find_by(name: params[:name]).try(:authenticate params[:password])
+  user = User.find_by(name: params[:name]).try(:authenticate, params[:password])
 
   if user
     session[:user_id] = user.id
