@@ -2,7 +2,7 @@
 <h1><center>Hello World!</center></h1>
  <% if current_user %>
     <p>It's nice to see you here again!</p>
-    <a href ='/logout'>LOGOUT</a>
+    <p><a href ='/logout'>LOGOUT</a> | <a href = '/user/<%=session[:user_id]%>'>PROFILE</a></p>
     <% else %>
     <p>Hello, world!</p>
     <p><a href='/signup'>Signup</a> OR <a href='/login'>Login</a> now!</p>
